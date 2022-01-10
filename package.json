@@ -1,13 +1,14 @@
 {
-  "name": "binance-oco",
+  "name": "gafo-binance-oco",
   "version": "0.0.0-development",
   "description": "A command line tool for placing conditional stop-limit, limit, and OCO (One-Cancels-the-Other) sell orders on Binance",
-  "main": "dist/binance-oco.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "binance-oco": "dist/cli.js"
   },
-  "types": "dist/binance-oco.d.ts",
   "scripts": {
+    "prepublish": "tsc",
     "build": "tsc",
     "lint": "eslint src/** --fix",
     "prepare": "npm run build",
@@ -19,14 +20,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tony-ho/binance-oco.git"
+    "url": "https://github.com/gafotech/binance-oco.git"
   },
   "author": "Tony Ho",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tony-ho/binance-oco/issues"
+    "url": "https://github.com/gafotech/binance-oco/issues"
   },
-  "homepage": "https://github.com/tony-ho/binance-oco#readme",
+  "homepage": "https://github.com/gafotech/binance-oco#readme",
   "dependencies": {
     "bignumber.js": "^8.1.1",
     "binance-api-node": "0.9.15",
@@ -36,7 +37,7 @@
     "yargs": "^11.0.0"
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 16"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",

@@ -1,6 +1,6 @@
 {
   "name": "gafo-binance-oco",
-  "version": "0.0.0-development",
+  "version": "0.0.1-development",
   "description": "A command line tool for placing conditional stop-limit, limit, and OCO (One-Cancels-the-Other) sell orders on Binance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

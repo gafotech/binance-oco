@@ -23,18 +23,32 @@ const exitHooks = async (cancel: Function): Promise<void> => {
   );
 };
 
-export const placeOCOOrder = async (
-  pair: string,
-  amount: string,
-  buyPrice: string,
-  buyLimitPrice: string,
-  stopPrice: string,
-  stopLimitPrice: string,
-  targetPrice: string,
-  cancelPrice: string,
-  scaleOutAmount: string,
-  nonBnbFees: boolean
-): Promise<void> => {
+interface OcoParams {
+  pair: string;
+  amount: string;
+  buyPrice: string | undefined;
+  buyLimitPrice: string | undefined;
+  stopPrice: string | undefined;
+  stopLimitPrice: string | undefined;
+  targetPrice: string | undefined;
+  cancelPrice: string | undefined;
+  scaleOutAmount: string | undefined;
+  nonBnbFees: boolean;
+}
+
+export const placeOCOOrder = async (params: OcoParams): Promise<void> => {
+  const {
+    pair,
+    amount,
+    buyPrice,
+    buyLimitPrice,
+    stopPrice,
+    stopLimitPrice,
+    targetPrice,
+    cancelPrice,
+    scaleOutAmount,
+    nonBnbFees
+  } = params;
   return await binanceOco(
     {
       pair: pair.toUpperCase(),

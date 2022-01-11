@@ -120,6 +120,10 @@ const exitHooks = async (cancel: Function): Promise<void> => {
         scaleOutAmount,
         nonBnbFees
       },
+      {
+        apiKey: process.env.API_KEY || "",
+        apiSecret: process.env.API_SECRET || ""
+      },
       exitHooks
     );
     process.exit(0);

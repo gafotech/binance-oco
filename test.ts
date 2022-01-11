@@ -9,17 +9,23 @@ import { placeOCOOrder } from "./index";
  *
  */
 
-placeOCOOrder({
-  pair: "BNBBTC",
-  amount: "1",
-  buyPrice: "0.002",
-  buyLimitPrice: undefined,
-  stopPrice: "0.001",
-  stopLimitPrice: undefined,
-  targetPrice: "0.003",
-  cancelPrice: undefined,
-  scaleOutAmount: undefined,
-  nonBnbFees: false
-})
+placeOCOOrder(
+  {
+    pair: "BNBBTC",
+    amount: "1",
+    buyPrice: "0.002",
+    buyLimitPrice: undefined,
+    stopPrice: "0.001",
+    stopLimitPrice: undefined,
+    targetPrice: "0.003",
+    cancelPrice: undefined,
+    scaleOutAmount: undefined,
+    nonBnbFees: false
+  },
+  {
+    apiKey: process.env.API_KEY || "",
+    apiSecret: process.env.API_SECRET || ""
+  }
+)
   .then(console.log)
   .catch(console.error);

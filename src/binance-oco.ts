@@ -70,6 +70,10 @@ export const binanceOco = async (
     scaleOutAmount?: string;
     nonBnbFees?: boolean;
   },
+  credentials: {
+    apiKey: string;
+    apiSecret: string;
+  },
   exitHook?: Function
 ): Promise<void> => {
   const result = Joi.validate(options, schema);
@@ -90,8 +94,8 @@ export const binanceOco = async (
   } = options;
 
   const binance = Binance({
-    apiKey: process.env.APIKEY || "",
-    apiSecret: process.env.APISECRET || ""
+    apiKey: credentials.apiKey || "",
+    apiSecret: credentials.apiSecret || ""
   });
 
   let isCancelling = false;

@@ -23,6 +23,11 @@ const exitHooks = async (cancel: Function): Promise<void> => {
   );
 };
 
+interface Credentials {
+  apiKey: string;
+  apiSecret: string;
+}
+
 interface OcoParams {
   pair: string;
   amount: string;
@@ -36,7 +41,10 @@ interface OcoParams {
   nonBnbFees: boolean;
 }
 
-export const placeOCOOrder = async (params: OcoParams): Promise<void> => {
+export const placeOCOOrder = async (
+  params: OcoParams,
+  credentials: Credentials
+): Promise<void> => {
   const {
     pair,
     amount,
@@ -62,6 +70,7 @@ export const placeOCOOrder = async (params: OcoParams): Promise<void> => {
       scaleOutAmount,
       nonBnbFees
     },
+    credentials,
     exitHooks
   );
 };

@@ -116,3 +116,10 @@ binance-oco -p BNBBTC -a 2 -b 0.002 -s 0.001 -t 0.003 -S 1
 ```
 
 See [How to Use OCO (One-Cancels-the-Other) Order Type](https://www.binance.com/en/support/articles/360032605831) for information on OCO orders.
+
+
+
+## Notes
+
+- `binance-api-node@0.9.15` is required
+- Currently not checking trade fee

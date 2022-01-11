@@ -527,9 +527,9 @@ export const binanceOco = async (
       }
       orderFilled = true;
 
-      if (stopPrice || targetPrice) {
-        await adjustSellAmountsForCommission(commissionAsset, stepSize);
-      }
+      // if (stopPrice || targetPrice) {
+      //   await adjustSellAmountsForCommission(commissionAsset, stepSize);
+      // }
     }
   }
 
